@@ -20,6 +20,5 @@ Pod::Spec.new do |s|
       ss.dependency 'SSZipArchive', '>= 1.8.1'
       ss.library = "z"
       ss.framework = "AVFoundation"
-      ss.dependency 'SVGAPlayer/ProtoFiles'
     end
 end
