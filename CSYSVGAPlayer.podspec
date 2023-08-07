@@ -14,12 +14,4 @@ Pod::Spec.new do |s|
   s.author       = { "shine sun" => "1525196995@qq.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/RuanR/CSYSVGAPlayer.git", :tag => s.version }
-  s.subspec 'Core' do |ss|
-    ss.source_files  = "Source/*.{h,m}"
-    ss.requires_arc = true
-    ss.dependency 'SSZipArchive', '>= 1.8.1'
-    ss.library = "z"
-    ss.framework = "AVFoundation"
-    ss.dependency 'SVGAPlayer/ProtoFiles'
-  end
 end
