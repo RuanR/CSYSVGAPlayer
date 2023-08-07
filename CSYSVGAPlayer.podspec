@@ -22,14 +22,4 @@ Pod::Spec.new do |s|
     ss.framework = "AVFoundation"
     ss.dependency 'SVGAPlayer/ProtoFiles'
   end
- /*
-   s.subspec 'ProtoFiles' do |ss|
-    ss.source_files  = "Source/pbobjc/*.{h,m}"
-    ss.requires_arc = false
-    ss.dependency 'Protobuf', '~> 3.4'
-    ss.pod_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
-    }
-  end  
-  */
 end
