@@ -13,11 +13,20 @@ Pod::Spec.new do |s|
   s.author       = { "shine sun" => "1525196995@qq.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/RuanR/CSYSVGAPlayer.git", :tag => s.version }
-  s.subspec 'Core' do |ss|
-      ss.source_files  = "Source/*.{h,m}"
-      ss.requires_arc = true
-      ss.dependency 'SSZipArchive', '>= 1.8.1'
-      ss.library = "z"
-      ss.framework = "AVFoundation"
-    end
+    s.subspec 'Core' do |ss|
+    ss.source_files  = "Source/*.{h,m}"
+    ss.requires_arc = true
+    ss.dependency 'SSZipArchive', '>= 1.8.1'
+    ss.library = "z"
+    ss.framework = "AVFoundation"
+    ss.dependency 'CSYSVGAPlayer/ProtoFiles'
+  end
+  s.subspec 'ProtoFiles' do |ss|
+    ss.source_files  = "Source/pbobjc/*.{h,m}"
+    ss.requires_arc = false
+    ss.dependency 'Protobuf', '~> 3.4'
+    ss.pod_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
+    }
+  end
 end
